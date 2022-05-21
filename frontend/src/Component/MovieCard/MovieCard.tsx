@@ -1,10 +1,14 @@
 
 import styles from "../MovieCard/MovieCard.module.scss"
-
+import { Link } from "react-router-dom"
 const MovieCard = ({data}: any) => {
     return (
         <>
+        
         <div className={styles.cardItem}>
+        {/* <Link to={`/movie/${data.imdbID}`}> */}
+                
+    
             <div className={styles.cardInner}>
                 <div className={styles.cardTop}>
                     <img src={data.Poster} />
@@ -16,6 +20,8 @@ const MovieCard = ({data}: any) => {
                     </div>
                 </div>
             </div>
+            {/* </Link> */}
+
         </div>
         </>
     )

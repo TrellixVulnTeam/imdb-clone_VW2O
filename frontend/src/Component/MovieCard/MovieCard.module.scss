@@ -1,3 +1,8 @@
-cardItem {
-    
+.cardItem {
+    transition: all .3s;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1)
+    }
 }

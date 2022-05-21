@@ -87,7 +87,6 @@ export default function App() {
 
                 <BrowserRouter>
                     <Routes>
-
                         <Route path="/" element={<Header/>} />
                         <Route path="/movie/:imdbID" element={<MovieDetail />} />
                     </Routes>
