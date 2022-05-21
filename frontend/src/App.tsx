@@ -83,6 +83,14 @@ export default function App() {
 
     return (
         <div className='container mt-5'>
+             <HideIfLogged loggedUser={loggedUser}>
+                <LoginForm setLocalUser={setLocalUser} needsLogin={needsLogin} setNeedsLogin={setNeedsLogin}/>
+            </HideIfLogged>
+
+            <HideIfNotLogged loggedUser={loggedUser}>
+                <button className='btn btn-danger d-block mx-auto mb-3' onClick={handleDisconnect}>Disconnect</button>
+                <BlogForm loggedUser={loggedUser} setNeedsUpdate={setNeedsUpdate}/>
+            </HideIfNotLogged>
                     <Home />
 
                 <BrowserRouter>
@@ -91,16 +99,9 @@ export default function App() {
                         <Route path="/movie/:imdbID" element={<MovieDetail />} />
                     </Routes>
                 </BrowserRouter>
-            {/* <HideIfLogged loggedUser={loggedUser}>
-                <LoginForm setLocalUser={setLocalUser} needsLogin={needsLogin} setNeedsLogin={setNeedsLogin}/>
-            </HideIfLogged>
+           
 
-            <HideIfNotLogged loggedUser={loggedUser}>
-                <button className='btn btn-danger d-block mx-auto mb-3' onClick={handleDisconnect}>Disconnect</button>
-                <BlogForm loggedUser={loggedUser} setNeedsUpdate={setNeedsUpdate}/>
-            </HideIfNotLogged>
-
-            <BlogList blogList={blogList}/> */}
+            {/* <BlogList blogList={blogList}/> */}
         </div>
     )
 }
